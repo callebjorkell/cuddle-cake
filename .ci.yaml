@@ -5,10 +5,14 @@ pipeline:
     commands:
       - npm test
 
-  deploy:
+  push:
     image: gitlab/dind
     privileged: true
     commands:
       - DOCKER_API_VERSION=1.23 docker build -t 127.0.0.1:30400/cuddle-cake .
       - DOCKER_API_VERSION=1.23 docker push 127.0.0.1:30400/cuddle-cake
 
+  deploy:
+    image: themalkolm/docker-helm:2.3.0
+    commands:
+      - helm upgrade --install --host=tiller-deploy.kube-system.svc.cluster.local:44134 cuddle-cake /share/go/src/github.com/callebjorkell/cuddle-cake/charts/cuddle-cake

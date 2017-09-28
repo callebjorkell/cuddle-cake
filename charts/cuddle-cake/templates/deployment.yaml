@@ -12,12 +12,12 @@ spec:
   template:
     metadata:
       labels:
-        service: sparkles
+        service: cuddle-cake
     spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: "cuddle-cake-env-config"
+            name: {{ .Release.Name }}-cuddle-cake-env-config
         image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         name: cuddle-cake
       restartPolicy: Always
