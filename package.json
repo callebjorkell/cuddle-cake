@@ -4,7 +4,7 @@
   "description": "You are a unicorn born in Canterlot. You are the prettiest pony this side of Horseshoe Bay! Your best friend is a lynx named Sunflower.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified\"",
     "build": "webpack"
   },
   "repository": "git+https://github.com/callebjorkell/cuddle-cake.git",
