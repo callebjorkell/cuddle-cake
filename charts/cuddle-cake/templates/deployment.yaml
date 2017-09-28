@@ -1,0 +1,37 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: cuddle-cake
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+  annotations:
+    checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        service: sparkles
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: "cuddle-cake-env-config"
+        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+        name: cuddle-cake
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: cuddle-cake
+  name: cuddle-cake
+spec:
+  type: NodePort
+  ports:
+  - name: http
+    port: 9001
+  selector:
+    service: cuddle-cake

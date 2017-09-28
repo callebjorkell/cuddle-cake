@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-cuddle-cake-env-config
+  namespace: default
+data:
+  DEBUG: "{{ default false .Values.debug }}"

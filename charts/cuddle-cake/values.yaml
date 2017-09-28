@@ -1,0 +1,5 @@
+# Default values for sparkles
+replicaCount: 10
+image:
+  tag: latest
+  name: luca3m/sleep
