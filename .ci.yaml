@@ -15,4 +15,5 @@ pipeline:
   deploy:
     image: themalkolm/docker-helm:2.3.0
     commands:
+      - find /share
       - helm upgrade --install --host=tiller-deploy.kube-system.svc.cluster.local:44134 cuddle-cake /share/go/src/github.com/callebjorkell/cuddle-cake/charts/cuddle-cake
