@@ -9,5 +9,6 @@ pipeline:
     image: gitlab/dind
     privileged: true
     commands:
-      - DOCKER_API_VERSION=1.23 docker build -t callebjorkell/cuddle-cake .
+      - DOCKER_API_VERSION=1.23 docker build -t 127.0.0.1:30400/cuddle-cake .
+      - docker push 127.0.0.1:30400/cuddle-cake
 
