@@ -11,6 +11,8 @@ const ecstatic = require('ecstatic')({
   autoIndex: true,
 });
 
+require('process').exit(2);
+
 app.fileserver(ecstatic)
 
 var presentation = 
