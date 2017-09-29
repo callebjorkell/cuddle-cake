@@ -34,7 +34,7 @@ metadata:
     service: cuddle-cake
   name: cuddle-cake
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: http
     port: 9001
