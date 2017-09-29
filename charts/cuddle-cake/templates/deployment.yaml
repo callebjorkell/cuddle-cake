@@ -9,10 +9,13 @@ metadata:
 
 spec:
   replicas: {{ .Values.replicaCount }}
+  minReadySeconds: 2
+  progressDeadlineSeconds: 10
   template:
     metadata:
       labels:
         service: cuddle-cake
+        # add random string, to force re-start of pods
         random-string: {{ randAlphaNum 15 }}
     spec:
       containers:
