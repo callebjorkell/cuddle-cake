@@ -15,7 +15,7 @@ spec:
     metadata:
       labels:
         service: cuddle-cake
-        # add random string, to force re-start of pods
+        # add random string, to force re-start of pods.
         random-string: {{ randAlphaNum 15 }}
     spec:
       containers:
