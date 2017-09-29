@@ -13,6 +13,6 @@ pipeline:
       - DOCKER_API_VERSION=1.23 docker push 127.0.0.1:30400/cuddle-cake
 
   deploy:
-    image: themalkolm/docker-helm:2.3.0
+    image: nrgizer/helm-test
     commands:
-      - helm upgrade --install --host=tiller-deploy.kube-system.svc.cluster.local:44134 cuddle-cake /share/go/src/callebjorkell/cuddle-cake/charts/cuddle-cake
+      - helm-test tiller-deploy.kube-system.svc.cluster.local:44134 /share/go/src/callebjorkell/cuddle-cake/charts/cuddle-cake
