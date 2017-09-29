@@ -6,7 +6,7 @@ import 'reveal.js/css/theme/black.css'
 import 'reveal.js/lib/css/zenburn.css'
 
 Reveal.initialize({
-    autoSlide: 10000,
+    autoSlide: 5000,
 	dependencies: [
 		{ src: 'plugin/markdown/marked.js' },
 		{ src: 'plugin/markdown/markdown.js' },
