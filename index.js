@@ -14,7 +14,7 @@ const ecstatic = require('ecstatic')({
 app.fileserver(ecstatic)
 
 var presentation = 
-  "I DON'T KNOW \n" +
+  "I DO KNOW \n" +
   "\n---\n" +
   "\nHow to deploy stuff"
 
