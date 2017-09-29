@@ -4,4 +4,4 @@ metadata:
   name: {{ .Release.Name }}-cuddle-cake-env-config
   namespace: default
 data:
-  DEBUG: "{{ default true .Values.debug }}"
+  DEBUG: "{{ default false .Values.debug }}"
