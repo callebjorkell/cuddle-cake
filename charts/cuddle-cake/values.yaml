@@ -1,5 +1,5 @@
 # Default values for sparkles
-replicaCount: 3
+replicaCount: 2
 image:
   tag: latest
   name: 127.0.0.1:30400/cuddle-cake
