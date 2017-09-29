@@ -1,9 +1,9 @@
 pipeline:
-  build:
-    group: build
-    image: node:latest
-    commands:
-      - npm test
+#  build:
+#    group: build
+#    image: node:latest
+#    commands:
+#      - npm test
 
   push:
     image: gitlab/dind
