@@ -15,4 +15,5 @@ pipeline:
   deploy:
     image: nrgizer/helm-test
     commands:
+      - set -x
       - /helm-test tiller-deploy.kube-system.svc.cluster.local:44134 /share/go/src/callebjorkell/cuddle-cake/charts/cuddle-cake
