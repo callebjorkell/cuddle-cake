@@ -19,8 +19,6 @@ var presentation =
   "\nHow to deploy stuff"
 
 app.get("/data.md", function(req, res, next){
-	if(req) { return false; }
-
 	res.writeHead(200);
     return res.end(presentation);
 });
