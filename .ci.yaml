@@ -1,11 +1,11 @@
 pipeline:
-#  build:
-#    group: build
-#    image: node:latest
-#    commands:
-#      - npm test
-#
-  push:
+  build:
+    group: build
+    image: node:latest
+    commands:
+      - npm test
+
+  dockerfile:
     image: gitlab/dind
     privileged: true
     commands:
